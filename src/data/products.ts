@@ -26,7 +26,7 @@ const giftSetColours = ['Navy', 'Orange', 'Sand', 'Slate', 'Walnut', 'Black', 'W
 export const giftSets: Product[] = giftSetColours.map((colour, i) => ({
   id: `gift-leather-${i + 1}`,
   sku: `SG${4883 + i}`,
-  name: `Leather Gift Set — ${colour}`,
+  name: `Leather Gift Set (${colour})`,
   category: 'Premium Gifts Set',
   image: asset(`products/gift-sets/leather-gift-set-${i + 1}`),
   price: 150 + i * 15,
