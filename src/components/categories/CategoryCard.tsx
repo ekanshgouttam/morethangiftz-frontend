@@ -1,7 +1,10 @@
 import type { Category } from '@/types'
 import { ImageWithFallback } from '@/components/ui/ImageWithFallback'
+import { useSearch } from '@/hooks/useSearch'
 
 export function CategoryCard({ category }: { category: Category }) {
+  const { open } = useSearch()
+
   return (
     <article className="group flex h-full min-h-[200px] flex-col border border-border bg-white transition-shadow hover:shadow-lg">
       <div className="flex flex-1 gap-4 p-4 sm:p-5">
@@ -24,13 +27,14 @@ export function CategoryCard({ category }: { category: Category }) {
           </ul>
         </div>
       </div>
-      <a
-        href="#featured"
+      <button
+        type="button"
+        onClick={() => open(category.name)}
         aria-label={`View all ${category.name}`}
         className="self-end bg-primary px-6 py-1.5 text-sm text-white transition-colors hover:bg-secondary"
       >
         View all
-      </a>
+      </button>
     </article>
   )
 }

@@ -3,12 +3,14 @@ import { asset } from '@/utils/assets'
 
 // DEMO DATA — names, prices and SKUs are mock values written to match the supplied design's images.
 
+const GREY = '#e0e0e0'
+
 export const featuredProducts: Product[] = [
-  { id: 'feat-bottle', name: 'Insulated Travel Bottle', category: 'Drinkware', image: asset('products/featured/bottle'), price: 62, isFeatured: true, isBestSeller: true },
-  { id: 'feat-polo', name: 'Classic Cotton Polo Shirt', category: 'Apparel', image: asset('products/featured/polo'), price: 45, isFeatured: true },
-  { id: 'feat-card-holder', name: 'Magnetic Card Holder', category: 'Technology', image: asset('products/featured/card-holder'), price: 28, isFeatured: true },
-  { id: 'feat-headphones', name: 'Wireless Over-Ear Headphones', category: 'Technology', image: asset('products/featured/headphones'), price: 129, isFeatured: true, isBestSeller: true },
-  { id: 'feat-sling-bag', name: 'Baltimore RCS Essentials Sling Bag', category: 'Bags', brand: 'VINGA', image: asset('products/featured/sling-bag'), price: 50, isFeatured: true },
+  { id: 'feat-bottle', name: 'Insulated Travel Bottle', category: 'Drinkware', image: asset('products/featured/bottle'), price: 62, isFeatured: true, imageBackground: GREY, isBestSeller: true },
+  { id: 'feat-polo', name: 'Classic Cotton Polo Shirt', category: 'Apparel', image: asset('products/featured/polo'), price: 45, isFeatured: true, imageBackground: GREY },
+  { id: 'feat-card-holder', name: 'Magnetic Card Holder', category: 'Technology', image: asset('products/featured/card-holder'), price: 28, isFeatured: true, imageBackground: GREY },
+  { id: 'feat-headphones', name: 'Wireless Over-Ear Headphones', category: 'Technology', image: asset('products/featured/headphones'), price: 129, isFeatured: true, imageBackground: GREY, isBestSeller: true },
+  { id: 'feat-sling-bag', name: 'Baltimore RCS Essentials Sling Bag', category: 'Bags', brand: 'VINGA', image: asset('products/featured/sling-bag'), price: 50, isFeatured: true, imageBackground: GREY },
 ]
 
 export const drinkwareProducts: Product[] = [

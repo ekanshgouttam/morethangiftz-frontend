@@ -4,6 +4,8 @@ import { HeroSection } from '@/components/hero/HeroSection'
 import { CategorySection } from '@/components/categories/CategorySection'
 import { TrustStats } from '@/components/trust/TrustStats'
 import { ProductSection } from '@/components/products/ProductSection'
+import { CartDrawer } from '@/components/cart/CartDrawer'
+import { SearchOverlay } from '@/components/search/SearchOverlay'
 import { drinkwareProducts, featuredProducts, giftSets } from '@/data/products'
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
         {/* Temporary spacer so #contact exists until the final CTA is built */}
         <div id="contact" className="h-24" />
       </main>
+      <CartDrawer />
+      <SearchOverlay />
     </div>
   )
 }

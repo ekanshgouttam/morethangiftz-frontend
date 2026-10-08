@@ -5,13 +5,16 @@ import '@fontsource/dm-serif-display'
 import './index.css'
 import App from './App'
 import { CartProvider } from '@/context/CartContext'
+import { SearchProvider } from '@/context/SearchContext'
 import { WishlistProvider } from '@/context/WishlistContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CartProvider>
       <WishlistProvider>
-        <App />
+        <SearchProvider>
+          <App />
+        </SearchProvider>
       </WishlistProvider>
     </CartProvider>
   </StrictMode>,

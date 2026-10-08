@@ -3,18 +3,18 @@ import { X } from 'lucide-react'
 import { primaryNav, secondaryNav, WHATSAPP_NUMBER, WHATSAPP_URL } from '@/data/navigation'
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon'
 import { SearchBar } from '@/components/search/SearchBar'
+import { useSearch } from '@/hooks/useSearch'
 import { cn } from '@/utils/cn'
 
 interface Props {
   open: boolean
   onClose: () => void
   returnFocusRef: RefObject<HTMLButtonElement | null>
-  query: string
-  onQueryChange: (value: string) => void
 }
 
-export function MobileMenu({ open, onClose, returnFocusRef, query, onQueryChange }: Props) {
+export function MobileMenu({ open, onClose, returnFocusRef }: Props) {
   const closeRef = useRef<HTMLButtonElement>(null)
+  const { query, setQuery, open: openSearch, openOnFocus } = useSearch()
   const wasOpen = useRef(false)
 
   useEffect(() => {
@@ -60,7 +60,18 @@ export function MobileMenu({ open, onClose, returnFocusRef, query, onQueryChange
         </div>
 
         <div className="p-4">
-          <SearchBar value={query} onChange={onQueryChange} />
+          <SearchBar
+            value={query}
+            onChange={setQuery}
+            onFocus={() => {
+              onClose()
+              openOnFocus()
+            }}
+            onSubmit={() => {
+              onClose()
+              openSearch()
+            }}
+          />
         </div>
 
         <nav aria-label="Product categories" className="px-4">

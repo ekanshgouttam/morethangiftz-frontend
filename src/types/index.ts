@@ -6,6 +6,8 @@ export interface Product {
   subcategory?: string
   brand?: string
   image: string
+  /** CSS colour behind the image when the source photo is not on white */
+  imageBackground?: string
   price: number
   originalPrice?: number
   discount?: number

@@ -36,7 +36,7 @@ export function ProductCard({ product, variant = 'vertical' }: { product: Produc
         <h3 className="text-lg leading-tight">{product.name}</h3>
         {product.sku && <p className="mt-0.5 text-xs text-muted">{product.sku}</p>}
       </div>
-      <div className="my-3 flex h-40 items-center justify-center sm:h-44">
+      <div className="my-3 flex h-40 items-center justify-center sm:h-44" style={{ backgroundColor: product.imageBackground }}>
         <ProductImage product={product} />
       </div>
       <div className="mt-auto">

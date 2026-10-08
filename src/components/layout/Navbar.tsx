@@ -6,15 +6,16 @@ import { SearchBar } from '@/components/search/SearchBar'
 import { MobileMenu } from '@/components/layout/MobileMenu'
 import { primaryNav, secondaryNav, WHATSAPP_NUMBER, WHATSAPP_URL } from '@/data/navigation'
 import { useCart } from '@/hooks/useCart'
+import { useSearch } from '@/hooks/useSearch'
 import { asset } from '@/utils/assets'
 
 const logo = asset('brand/logo')
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [query, setQuery] = useState('')
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const { count, openCart } = useCart()
+  const { query, setQuery, open: openSearch, openOnFocus } = useSearch()
   const closeMenu = useCallback(() => setMenuOpen(false), [])
 
   return (
@@ -50,7 +51,17 @@ export function Navbar() {
           </nav>
 
           <div className="hidden flex-1 justify-center px-2 lg:flex">
-            <SearchBar value={query} onChange={setQuery} className="w-full max-w-[490px]" />
+            <SearchBar
+              value={query}
+              onChange={(value) => {
+                setQuery(value)
+                openSearch()
+              }}
+              onFocus={openOnFocus}
+              onInputClick={() => openSearch()}
+              onSubmit={() => openSearch()}
+              className="w-full max-w-[490px]"
+            />
           </div>
 
           <div className="ml-auto flex items-center gap-1 lg:ml-0 lg:gap-4">
@@ -104,7 +115,7 @@ export function Navbar() {
         </a>
       </div>
 
-      <MobileMenu open={menuOpen} onClose={closeMenu} returnFocusRef={menuButtonRef} query={query} onQueryChange={setQuery} />
+      <MobileMenu open={menuOpen} onClose={closeMenu} returnFocusRef={menuButtonRef} />
     </header>
   )
 }
