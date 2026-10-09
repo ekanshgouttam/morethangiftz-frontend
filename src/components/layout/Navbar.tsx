@@ -52,6 +52,7 @@ export function Navbar() {
 
           <div className="hidden flex-1 justify-center px-2 lg:flex">
             <SearchBar
+              formLabel="Site search"
               value={query}
               onChange={(value) => {
                 setQuery(value)

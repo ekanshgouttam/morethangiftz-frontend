@@ -53,7 +53,7 @@ export function Carousel({ label, perViewClassName, children }: Props) {
 
   return (
     <div
-      role="region"
+      role="group"
       aria-roledescription="carousel"
       aria-label={label}
       className={cn('relative [--gap:1rem] sm:[--gap:1.5rem]', perViewClassName)}

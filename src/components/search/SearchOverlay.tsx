@@ -54,7 +54,7 @@ export function SearchOverlay() {
       >
         <Container className="py-4 sm:py-6">
           <div className="flex items-center gap-3">
-            <SearchBar inputRef={inputRef} value={query} onChange={setQuery} className="flex-1" />
+            <SearchBar formLabel="Product search" inputRef={inputRef} value={query} onChange={setQuery} className="flex-1" />
             <button type="button" onClick={close} aria-label="Close search" className="grid size-11 shrink-0 place-items-center hover:bg-surface-soft">
               <X aria-hidden className="size-6" />
             </button>

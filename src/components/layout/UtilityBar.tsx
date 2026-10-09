@@ -33,7 +33,7 @@ export function UtilityBar() {
   }
 
   return (
-    <div data-theme="dark" className="bg-primary text-white">
+    <aside aria-label="Store notices and utilities" data-theme="dark" className="bg-primary text-white">
       <Container className="flex h-10 items-center gap-4 text-[11px] sm:text-xs">
         <div className="hidden flex-1 items-center gap-8 md:flex">
           <StaticSelect label="Language" value="English" />
@@ -60,6 +60,6 @@ export function UtilityBar() {
           </a>
         </div>
       </Container>
-    </div>
+    </aside>
   )
 }

@@ -1,19 +1,20 @@
 import { ButtonLink } from '@/components/ui/ButtonLink'
-import { asset } from '@/utils/assets'
-
-const hero = asset('hero/hero')
 
 export function HeroSection() {
   return (
     <section id="hero" aria-labelledby="hero-title" className="relative bg-surface-soft">
-      <img
-        src={hero}
-        alt="Corporate gift ideas: travel organiser, charging cable, notebook and colourful insulated bottles"
-        width={1883}
-        height={502}
-        fetchPriority="high"
-        className="h-56 w-full object-cover object-[80%_center] md:h-auto md:object-center"
-      />
+      {/* Images live in /public so they can be preloaded from index.html (LCP). Phones get the cropped half-width version. */}
+      <picture>
+        <source media="(max-width: 767px)" srcSet="/hero-right.webp" width={943} height={502} />
+        <img
+          src="/hero.webp"
+          alt="Corporate gift ideas: travel organiser, charging cable, notebook and colourful insulated bottles"
+          width={1883}
+          height={502}
+          fetchPriority="high"
+          className="h-56 w-full object-cover md:h-auto"
+        />
+      </picture>
 
       <div className="px-4 py-8 text-center lg:p-0">
         <h1 id="hero-title" className="text-3xl sm:text-4xl lg:sr-only">

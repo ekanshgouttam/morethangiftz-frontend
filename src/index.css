@@ -1,5 +1,21 @@
 @import 'tailwindcss';
 
+/* Self-hosted, latin-only fonts (preloaded in index.html) */
+@font-face {
+  font-family: 'Montserrat Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/montserrat-latin-wght-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/dm-serif-display-latin-400-normal.woff2') format('woff2');
+}
+
 /* Design tokens — extracted from the supplied design (monochrome + grey surfaces).
    Tailwind's default spacing scale already covers 4/8/12/16/24/32/48/64/80/96
    (p-1, p-2, p-3, p-4, p-6, p-8, p-12, p-16, p-20, p-24). */
@@ -12,7 +28,7 @@
   --color-surface-strong: #d3d3d3;
   --color-panel: #d3d3d3;
   --color-text: #000000;
-  --color-muted: #6b6b6b;
+  --color-muted: #595959;
   --color-border: #1a1a1a;
   --color-border-soft: #d4d4d4;
   --color-accent: #25d366;

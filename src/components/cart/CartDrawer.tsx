@@ -12,14 +12,14 @@ import { cn } from '@/utils/cn'
 
 export function CartDrawer() {
   const { items, isOpen, count, subtotal, closeCart, clear } = useCart()
-  const panelRef = useRef<HTMLElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
   useModalBehavior({ open: isOpen, onClose: closeCart, containerRef: panelRef, initialFocusRef: closeRef })
 
   return (
     <div className={cn('fixed inset-0 z-[55]', !isOpen && 'pointer-events-none')} inert={!isOpen}>
       <div onClick={closeCart} aria-hidden className={cn('absolute inset-0 bg-black/50 transition-opacity duration-300', isOpen ? 'opacity-100' : 'opacity-0')} />
-      <aside
+      <div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
@@ -63,7 +63,7 @@ export function CartDrawer() {
             </div>
           </>
         )}
-      </aside>
+      </div>
     </div>
   )
 }

@@ -9,11 +9,13 @@ interface Props {
   onFocus?: () => void
   onInputClick?: () => void
   inputRef?: Ref<HTMLInputElement>
+  /** Accessible name of the search landmark — keep unique per page */
+  formLabel?: string
   placeholder?: string
   className?: string
 }
 
-export function SearchBar({ value, onChange, onSubmit, onFocus, onInputClick, inputRef, placeholder = 'Search for gifts, products or ideas…', className }: Props) {
+export function SearchBar({ value, onChange, onSubmit, onFocus, onInputClick, inputRef, formLabel = 'Search', placeholder = 'Search for gifts, products or ideas…', className }: Props) {
   const id = useId()
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -21,7 +23,7 @@ export function SearchBar({ value, onChange, onSubmit, onFocus, onInputClick, in
   }
 
   return (
-    <form role="search" onSubmit={handleSubmit} className={cn('relative', className)}>
+    <form role="search" aria-label={formLabel} onSubmit={handleSubmit} className={cn('relative', className)}>
       <label htmlFor={id} className="sr-only">Search products</label>
       <input
         ref={inputRef}

@@ -43,7 +43,7 @@ export function MobileMenu({ open, onClose, returnFocusRef }: Props) {
         aria-hidden
         className={cn('absolute inset-0 bg-black/50 transition-opacity duration-300', open ? 'opacity-100' : 'opacity-0')}
       />
-      <aside
+      <div
         role="dialog"
         aria-modal="true"
         aria-label="Main menu"
@@ -61,6 +61,7 @@ export function MobileMenu({ open, onClose, returnFocusRef }: Props) {
 
         <div className="p-4">
           <SearchBar
+            formLabel="Menu search"
             value={query}
             onChange={setQuery}
             onFocus={() => {
@@ -100,7 +101,7 @@ export function MobileMenu({ open, onClose, returnFocusRef }: Props) {
             {WHATSAPP_NUMBER}
           </a>
         </div>
-      </aside>
+      </div>
     </div>
   )
 }
