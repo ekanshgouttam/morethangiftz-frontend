@@ -2,8 +2,8 @@
 
 A responsive, component-based recreation of the MoreThanGiftz corporate-gifting homepage, built from the supplied design.
 
-**Live demo:** _add your Vercel URL here_
-**Repository:** _add your GitHub URL here_
+**Live demo:** https://morethangiftz-frontend.vercel.app/
+**Repository:** https://github.com/ekanshgouttam/morethangiftz-frontend
 
 ## Tech stack
 
