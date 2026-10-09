@@ -7,8 +7,10 @@
   --color-primary: #000000;
   --color-secondary: #1a1a1a;
   --color-background: #ffffff;
-  --color-surface: #e1e1e1;
+  --color-surface: #e0e0e0;
   --color-surface-soft: #f4f4f4;
+  --color-surface-strong: #d3d3d3;
+  --color-panel: #d3d3d3;
   --color-text: #000000;
   --color-muted: #6b6b6b;
   --color-border: #1a1a1a;

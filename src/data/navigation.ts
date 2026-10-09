@@ -25,3 +25,6 @@ export const secondaryNav: NavLink[] = [
 
 export const WHATSAPP_NUMBER = '+971 55 786 3450'
 export const WHATSAPP_URL = 'https://wa.me/971557863450'
+
+export const PHONE_URL = 'tel:+971557863450'
+export const CONTACT_EMAIL = 'biren@jasani.ae'

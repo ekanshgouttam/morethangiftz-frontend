@@ -3,7 +3,7 @@ import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { cn } from '@/utils/cn'
 import { ProductCard, type ProductCardVariant } from './ProductCard'
-import { ProductCarousel } from './ProductCarousel'
+import { Carousel } from '@/components/ui/Carousel'
 
 interface Props {
   id: string
@@ -24,11 +24,11 @@ export function ProductSection({ id, title, subtitle, products, variant = 'verti
     <section id={id} aria-labelledby={`${id}-title`} className={cn('py-10 sm:py-14', tone === 'grey' && 'bg-surface')}>
       <Container>
         <SectionHeading id={`${id}-title`} title={title} subtitle={subtitle} className="mb-8" />
-        <ProductCarousel label={title} perViewClassName={perView[variant]}>
+        <Carousel label={title} perViewClassName={perView[variant]}>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} variant={variant} />
           ))}
-        </ProductCarousel>
+        </Carousel>
       </Container>
     </section>
   )
